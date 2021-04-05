@@ -1,0 +1,82 @@
+header {
+
+  #main {
+    background-color: $navBgColor;
+    opacity: 90%;
+
+    .container-fluid {
+      max-width: 1320px;
+      width: 100%;
+      padding-right: var(--bs-gutter-x,.75rem);
+      padding-left: var(--bs-gutter-x,.75rem);
+      margin-right: auto;
+      margin-left: auto;
+
+      .profile-nav a.active {
+        background-color: $profileNavActiveColor;
+      }
+      
+      .nav-link {
+        color: $navFontColor;
+      }
+      #navbarSupportedContent{
+        margin-left: 20px;
+        .navbar-nav{
+          margin-right: 60px;
+        }
+        .navbar-text{
+          margin-left: 40px;
+          a {
+            margin-right: 20px;
+            color: $bigBtnBgColor;
+            text-decoration: none;
+          }
+          .btn-post-job {
+            background-color: $navBgColor;
+            border-color: $bigBtnBgColor;
+            border: 2px solid $bigBtnBgColor;
+            border-radius: 0;
+          }
+          .btn-post-job:hover{
+            color: $navBgColor;
+            background-color: $bigBtnBgColor;
+          }
+        }
+      }
+      .navbar-toggler, .high-light {
+          color: $navHighlightFontColor;
+      }
+
+      
+      
+      .btn-secondary:not(:disabled):not(.disabled).active,
+      .btn-secondary:not(:disabled):not(.disabled):active,
+      .show > .btn-secondary.dropdown-toggle {
+        color: $bigBtnFontColor;
+        background-color: $bigBtnBgColor;
+        border-color: $bigBtnBgColor;
+      }
+
+      .btn-primary {
+        background-color: $bigBtnBgColor;
+        border-color: $bigBtnBgColor;
+        color: $bigBtnFontColor;
+      }
+
+      @media (min-width: 30em) {
+        .main-logo img {
+          max-width: 20px;
+        }
+      }
+
+      @media (min-width: 40em) {
+        .main-logo img {
+          max-width: 240px;
+        }
+      }
+
+    }
+    
+  }
+
+}

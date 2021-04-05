@@ -1,0 +1,25 @@
+{% import 'macros/site.html' as s %}
+
+<form method="post" action="{{ s.job_search_url() }}">
+    <div class="form-row">
+        <div class="col-md-6 my-1">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-search"></i></div>
+                </div>
+                <input type="text" class="form-control" placeholder="Job title/ keywords">
+            </div>
+        </div>
+        <div class="col-md-4 my-1">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                </div>
+                <input type="text" class="form-control" placeholder="Location. e.g.: kuala lumpur">
+            </div>
+        </div>
+        <div class="col-md-2 my-1">
+            <button type="submit" class="btn btn-primary form-control"><i class="fas fa-filter"></i> Search</button>
+        </div>
+    </div>
+</form>

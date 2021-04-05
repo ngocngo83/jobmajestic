@@ -1,0 +1,69 @@
+{% import 'macros/form.html' as form %}
+{% import 'macros/button.html' as btn %}
+{% import 'macros/user.html' as user %}
+{% import 'macros/site.html' as s %}
+
+<div class="row">
+    <div class="col-12 col-md-6 order-last order-md-first">
+        <p class="text-muted mb-0"><small>
+            {#
+            <ul>
+                <li>Benefit 1</li>
+                <li>Benefit 2</li>
+                <li>Benefit 3</li>
+                <li>Benefit 4</li>
+            </ul>
+            #}
+            By signing up, I have read and agreed to JobMajestic.com <a href="{{ s.terms_url() }}" rel="nofollow">Terms
+            of Use</a> and <a href="{{ s.privacy_url() }}" rel="nofollow">Privacy Policy</a>.
+        </small></p>
+    </div>
+    <div class="col-12 col-md-6 border-left">
+        <form action="{{ user.signup_url() }}" class="signupform" method="post" autocomplete="on">
+            {{ btn.facebook() }}
+            <div class="row py-2">
+                <div class="col-sm-5 d-none d-md-block">
+                    <hr>
+                </div>
+                <div class="col-sm-2 text-muted text-center py-1">OR</div>
+                <div class="col-sm-5 d-none d-md-block">
+                    <hr>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-md-0">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" class="form-control" maxlength="50" autocomplete="given-name"
+                           autofocus required name="">
+                </div>
+                <div class="col-sm-6">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" class="form-control" maxlength="50" autocomplete="family-name"
+                           required name="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <label for="email-signup">Email</label>
+                    <input type="email" id="email-signup" class="form-control" maxlength="50" autocomplete="email"
+                           required name="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <label for="new-password">Password</label>
+                    <div class="input-group mb-2">
+                        <input type="password" id="new-password" class="form-control new-password" maxlength="12"
+                               aria-describedby="pw-constraints" autocomplete="new-password" required name="">
+                    </div>
+                    <div id="pw-constraints"><small>12 characters with a mix of letters, numbers and symbols.</small></div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary col-12">Sign Up</button>
+        </form>
+        <p class="text-center my-3"><small>
+            Already a candidate? <a href="{{ user.login_url() }}" rel="nofollow" data-dismiss="modal"
+                                    data-toggle="modal" data-target="#loginModal">Log in Now</a>
+        </small></p>
+    </div>
+</div>

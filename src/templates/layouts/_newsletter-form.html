@@ -1,0 +1,28 @@
+{% if newsletter_subscription %}
+<div id="newsletterSubscription" class="py-3">
+    <div class="container">
+        <form>
+            <div class="form-row d-flex justify-content-center">
+                <div class="col-12 col-md-auto text-center">
+                    <h3>{{ 'Subscribe to our Newsletter' | upper }}</h3>
+                </div>
+            </div>
+            <div class="form-row d-flex justify-content-center">
+                <div class="col-12 col-sm-auto">
+                    <label class="sr-only" for="newsletterEmail">Email</label>
+                    <input type="email" class="form-control mb-2" id="newsletterEmail" placeholder="Email"
+                           maxlength="50" required name="">
+                </div>
+                <div class="col-12 col-sm-auto">
+                    <label class="sr-only" for="newsletterName">Full Name</label>
+                    <input type="text" class="form-control mb-2" id="newsletterName" placeholder="Name" maxlength="200"
+                           required name="">
+                </div>
+                <div class="col-12 col-sm-auto text-center">
+                    <button type="submit" class="btn btn-primary mb-2">Subscribe!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}

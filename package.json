@@ -1,0 +1,43 @@
+{
+  "name": "html_boilerplate",
+  "version": "1.0.0",
+  "description": "This is a html boilerplate",
+  "author": "Zang",
+  "url": "https://www.saleduck.com",
+  "license": "MIT License",
+  "keywords": "gulp",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specific\" && exit 1",
+    "build": "Build dist"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "browser-sync": "^2.26.13",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "*",
+    "gulp-babel": "^8.0.0",
+    "gulp-cache": "*",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "*",
+    "gulp-imagemin": "*",
+    "gulp-notify": "*",
+    "gulp-nunjucks-render": "*",
+    "gulp-plumber": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "*",
+    "nunjucks-tag-spaceless": "^1.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "browserslist": "^4.14.6",
+    "caniuse-lite": "^1.0.30001156",
+    "config": "^3.3.2",
+    "Datepicker.js": "^0.1.1",
+    "gulp-htmlmin": "^5.0.1",
+    "yargs-parser": "^19.0.4"
+  }
+}

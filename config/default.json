@@ -1,0 +1,68 @@
+{
+  "name": "Default Config",
+  "version": "1.0.0",
+  "src": {
+    "dir": "./src/",
+    "*": "./src/**/*",
+    "assets": {
+      "dir": "./src/assets/",
+      "*": "./src/assets/**/*"
+    },
+    "html": {
+      "dir": "./src/templates/",
+      "*": "./src/templates/**/*"
+    },
+    "img": {
+      "dir": "./src/assets/img/",
+      "*": "./src/assets/img/**/*"
+    },
+    "js": {
+      "dir": "./src/assets/js/",
+      "*": "./src/assets/js/**/*.js"
+    },
+    "plugins": {
+      "dir": "./src/assets/plugins/",
+      "*": "./src/assets/plugins/**/*.js"
+    },
+    "css": {
+      "dir": "./src/assets/css/",
+      "*": "./src/assets/**/*.scss"
+    }
+  },
+  "dist": {
+    "dir": "./dist/",
+    "*": "./dist/**/*",
+    "assets": {
+      "dir": "./dist/assets/",
+      "*": "./dist/assets/**/*"
+    },
+    "img": {
+      "dir": "./dist/assets/img/",
+      "*": "./dist/assets/img/**/*"
+    },
+    "js": {
+      "dir": "./dist/assets/js/",
+      "min.*": "./dist/assets/js/**/*.min.js",
+      "*": "./dist/assets/js/**/*.js"
+    },
+    "plugins": {
+      "dir": "./dist/assets/plugins/",
+      "min.*": "./dist/assets/plugins/**/*.min.js",
+      "*": "./dist/assets/plugins/**/*"
+    },
+    "css": {
+      "dir": "./dist/assets/css/",
+      "*": "./dist/assets/css/**/*.css"
+    },
+    "html": {
+      "dir": "./dist/",
+      "*": "./dist/**/*.html"
+    }
+  },
+  "remove": [
+    "./dist/layouts",
+    "./dist/partials",
+    "./dist/macros",
+    "./dist/assets/3rd"
+  ]
+}

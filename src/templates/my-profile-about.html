@@ -1,0 +1,107 @@
+{% import 'macros/form.html' as form %}
+{% import 'macros/path.html' as f %}
+
+{% set active_menu_item = 'profile' %}
+{% set active_side_menu = 'about' %}
+
+{% extends "layouts/candidate-base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ f.plugin('datepicker/css/datepicker.minimal.css') }}">
+{% endblock %}
+
+{% block js %}
+{# f.datepicker() #}
+{% endblock %}
+
+{% set page_title = 'About Me' %}
+{% set page_description = 'Fields marked with "*" are required.' %}
+
+{% block page %}
+{{ form.alert() }}
+{{ form.alert('info', 'Update success!') }}
+<form method="post">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" class="form-control" maxlength="50" id="firstName" required name="" value="">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="lastName">Last Name (Family Name) *</label>
+                    <input type="text" class="form-control" maxlength="50" id="lastName" required name="" value="">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-2">
+                    <label for="gender">Gender *</label>
+                    <select id="gender" class="form-control" name="">
+                        <option selected>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-4">
+                    <label for="dob">Date of birth *</label>
+                    <input type="date" class="form-control" maxlength="50" autocomplete="off" id="dob" required name=""
+                           value="">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="identityNumber">Identity *</label>
+                    <div class="input-group mb-3">
+                        <select class="custom-select w-25" name="">
+                            <option selected>Choose...</option>
+                            <option value="1">(60) Malaysia</option>
+                        </select>
+                        <div class="input-group-append">
+                            <input type="text" class="form-control" maxlength="15" id="identityNumber" required name=""
+                                   value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" maxlength="50" id="email" required name="" value="">
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="nationality">Nationality *</label>
+                    <select id="nationality" class="form-control" name="">
+                        <option selected>Malaysia</option>
+                        <option>Singapore</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="mobileNumber">Mobile Number *</label>
+                    <div class="input-group mb-3">
+                        <select class="custom-select w-25">
+                            <option selected>Choose...</option>
+                            <option value="1">(60) Malaysia</option>
+                        </select>
+                        <div class="input-group-append">
+                            <input type="text" class="form-control" maxlength="10" id="mobileNumber" required name=""
+                                   value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <label for="contactNumber">Contact Number *</label>
+                    <input type="text" class="form-control" maxlength="15" id="contactNumber" required name="" value="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

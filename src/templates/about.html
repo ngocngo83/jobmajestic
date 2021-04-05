@@ -1,0 +1,102 @@
+{% import 'macros/path.html' as f %}
+
+{% extends "layouts/full-page.html" %}
+
+{% block js %}{% endblock %}
+
+{% set meta_title = '' %}
+{% set meta_description = '' %}
+{% set meta_keywords = '' %}
+{% set meta_robots = 'noindex,nofollow' %}
+
+{% set page_title = 'About Us' %}
+{% set page_sub_title = '' %}
+{% set quote = 'Last updated on 24th Aug 2020' %}
+
+{% block page %}
+<div class="row">
+    <div class="col-12">
+        <h4>Career Site</h4>
+        <p>
+            Helping job seekers to build successful and happy career. We believe everyone deserves an
+            opportunity to
+            find a happy career.
+        </p>
+
+        <h4>For Job Seekers</h4>
+        <p>
+            Build their successful career by providing career guidance, expert advice, interviews, videos, and a
+            job
+            board with wide selection of job opportunities.
+        </p>
+
+        <h4>For Organisations</h4>
+        <p>
+            We help them to filter, engage and retain the talents by helping them to build an-depth company
+            profiles
+            or
+            more. Job Majestic is a bridge between job seekers and employers.
+        </p>
+
+        <h4>Our Achievement</h4>
+        <p>
+            In March 2019, the Company has focused on building its talent pool to cater for its further growth
+            in
+            2019.
+            Currently, our platform has recruited more than 5,000 potential candidates to fulfil the job demands
+            from
+            our 30 business partners.
+        </p>
+
+        <h4>Our Core Values: <strong>B.O.S.S</strong></h4>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-4">
+    <div class="col mb-4">
+        <div class="card shadow h-100">
+            <img src="{{ f.img('job-majestic-b.png') }}" class="card-img-top" alt="Job Majestic Core Value B">
+            <div class="card-body">
+                <h5 class="card-title">Build a positive workforce</h5>
+                <p class="card-text">
+                    We believe in everybody deserves a fulfilling career by gaining proper career guidance and
+                    advice.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <div class="card shadow h-100">
+            <img src="{{ f.img('job-majestic-o.png') }}" class="card-img-top" alt="Job Majestic Core Value O">
+            <div class="card-body">
+                <h5 class="card-title">Open-minded</h5>
+                <p class="card-text">
+                    Be open-minded and creative. We welcome constructive comments. If there is a better way we embrace
+                    it and we're always excited to try something new.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <div class="card shadow h-100">
+            <img src="{{ f.img('job-majestic-s.png') }}" class="card-img-top" alt="Job Majestic Core Value S">
+            <div class="card-body">
+                <h5 class="card-title">Self-respect</h5>
+                <p class="card-text">
+                    We believe in the value of respect comes from inner first. If you learn to respect yourself you
+                    learn to respect others
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col mb-4">
+        <div class="card shadow h-100">
+            <img src="{{ f.img('job-majestic-s2.png') }}" class="card-img-top" alt="Job Majestic Core Value S">
+            <div class="card-body">
+                <h5 class="card-title">Self-empowerment</h5>
+                <p class="card-text">We help people to become self-empowered through our online content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

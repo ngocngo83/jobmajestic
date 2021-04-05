@@ -1,0 +1,64 @@
+{% macro img(file) %}{{ 'assets/img/' ~ file }}{% endmacro %}
+
+{% macro ico(file) %}{{ 'assets/img/ico/' ~ file }}{% endmacro %}
+
+{% macro css(file) %}{{ 'assets/css/' ~ file }}{% endmacro %}
+
+{% macro js(file) %}{{ 'assets/js/' ~ file }}{% endmacro %}
+
+{% macro plugin(file) %}{{ 'assets/plugins/' ~ file }}{% endmacro %}
+
+{% macro plugin_js(file) %}
+<script src="{{ 'assets/plugins/' ~ file }}"></script>{% endmacro %}
+
+{% macro default_avatar(size = '100') %}{{ 'assets/img/default/male-' ~ size ~ '.png' }}{% endmacro %}
+
+{% macro default_company_logo() %}{{ 'assets/img/default/company-avatar-110.png' }}{% endmacro %}
+
+{% macro default_company_header_img() %}{{ 'assets/img/default/job-majestic-company-hdr.png' }}{% endmacro %}
+
+{% macro default_company_header_img2() %}{{ 'assets/img/default/job-majestic-company-hdr2.png' }}{% endmacro %}
+
+{% macro slider_banner(size = 1) %}{{ 'assets/img/homesliders/' ~ size ~'.webp' }}{% endmacro %}
+
+{% macro sample_banner(size = 1) %}{{ 'assets/img/samples/home-banner-' ~ size ~'.jpg' }}{% endmacro %}
+
+{% macro sample_event_tb(size = 1) %}{{ 'assets/img/samples/events-' ~ size ~'-tb.jpg' }}{% endmacro %}
+
+{% macro ajax() %}
+<script src="https://cdn.jsdelivr.net/npm/ajax-client/lib/ajax-client.js"></script>{% endmacro %}
+
+{% macro ajax2() %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>{% endmacro %}
+
+{% macro toggle() %}{{ plugin_js('zang/toggle-1.0.0.min.js') }}{% endmacro%}
+
+{% macro ajax_form() %}{{ plugin_js('zang/jaxform-1.0.0.min.js') }}{% endmacro %}
+
+{% macro copy() %}{{ plugin_js('zang/copy-1.0.0.min.js') }}{% endmacro %}
+
+{% macro scroll() %}{{ plugin_js('zang/scroll-1.0.0.min.js') }}{% endmacro %}
+
+{% macro datepicker() %}{{ plugin_js('datepicker/datepicker.js') }}{% endmacro %}
+
+{% macro module(modules = {}) %}
+{% for m in modules %}
+{% if m == 'ajax_form' %}
+{{ ajax_form() }}
+{% elseif m == 'ajax' %}
+{{ ajax() }}
+{% elseif m == 'toggle' %}
+{{ toggle() }}
+{% elseif m == 'scroll' %}
+{{ scroll() }}
+{% elseif m == 'copy' %}
+{{ copy() }}
+{% elseif m == 'datepicker' %}
+{{ datepicker() }}
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro if(condition, then_action = '', else_action = '') %}
+{% if condition %}{{ then_action }}{% else %}{{ else_action }}{% endif %}
+{% endmacro %}

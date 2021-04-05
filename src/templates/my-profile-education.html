@@ -1,0 +1,119 @@
+{% import 'macros/form.html' as form %}
+
+{% set active_menu_item = 'profile' %}
+{% set active_side_menu = 'education' %}
+
+{% extends "layouts/candidate-base.html" %}
+
+{% set page_title = 'Education' %}
+{% set page_description = 'Fields marked with "*" are required.' %}
+
+{% block page %}
+{{ form.alert() }}
+{{ form.alert('info', 'Update success!') }}
+<form method="post">
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="educationLevel">Highest Educational Level *</label>
+                    <select id="educationLevel" class="form-control" name="">
+                        <option selected>Bachelors Degree or Equivalent</option>
+                        <option>Singapore</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-3">
+        <a class="btn btn-sm" id="addEdu"><i class="fas fa-plus-circle"></i> Add qualification row</a>
+    </div>
+
+    {% for i in range(0,1) %}
+    <div class="mb-4 copy-edu-row">
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="form-group col-sm-6 text-right order-sm-2">
+                        <a class="btn btn-sm remove-edu"><i class="fas fa-minus-circle"></i> Remove</a>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="position">Institute/ University *</label>
+                        <input type="text" class="form-control" maxlength="100" required name="educations[][institute]"
+                               value="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="fromDate{{ i }}">Graduation Date *</label>
+                        <div class="input-group">
+                            <select class="custom-select w-25" name="educations[][graduation_month]">
+                                <option disabled hidden selected>Month ...</option>
+                                <option value="1">Jan</option>
+                                <option value="1">Feb</option>
+                            </select>
+                            <div class="input-group-append">
+                                <select class="form-control" name="educations[][graduation_year]">
+                                    <option disabled hidden selected>Year ...</option>
+                                    <option>2000</option>
+                                    <option>2001</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label>Qualification *</label>
+                        <select class="custom-select" name="educations[][qualification_code]" required>
+                            <option disabled hidden selected>Choose ...</option>
+                            <option value="1">Degree</option>
+                            <option value="2">Master</option>
+                            <option value="3">Diploma</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label>Field of Study *</label>
+                        <select class="custom-select" name="educations[][study_field_code]" required>
+                            <option disabled hidden selected>Choose ...</option>
+                            <option value="1">Information Technology</option>
+                            <option value="2">E-commerce</option>
+                            <option value="3">Diploma</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label>Major</label>
+                        <input type="text" class="form-control" maxlength="50" required name="educations[][major]"
+                               value="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-6 offset-sm-6">
+                        <label>Grade</label>
+                        <input type="text" class="form-control" maxlength="10" required name="educations[][grade]"
+                               value="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-12">
+                        <label>Additional Information</label>
+                        <textarea class="form-control" rows="5" name="educations[][description]"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="card shadow">
+        <div class="card-body">
+            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

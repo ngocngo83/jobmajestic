@@ -1,0 +1,22 @@
+{% import 'macros/path.html' as f %}
+
+{% for i in range(1,13) %}
+<div class="col mb-4">
+    <div class="card shadow rounded-lg h-100">
+        <div class="card-body p-2">
+            <img src="{{ f.default_company_logo() }}" class="float-left mr-4" width="100" height="100" alt="...">
+            <h6 class="card-title">
+                <a href="company-landing.html">
+                    {{ 'Company Name' | title }}
+                </a>
+            </h6>
+            <p class="card-text">
+                <a href="companies.html">Industry Name</a>
+            </p>
+            <p class="card-text">
+                6 jobs
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}

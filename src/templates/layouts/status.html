@@ -1,0 +1,16 @@
+{% extends "layouts/full-page.html" %}
+
+{% set meta_robots = 'noindex,nofollow' %}
+
+{% block page %}
+<div class="row mx-1 d-flex justify-content-center">
+    <div class="card">
+        <div class="card-body">
+            {% if status_title %}
+            <h4 class="mb-4">{{ status_title }}</h4>
+            {% endif %}
+            <p class="card-text">{% block status %}{% endblock %}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

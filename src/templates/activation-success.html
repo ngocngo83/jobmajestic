@@ -1,0 +1,13 @@
+{% import 'macros/user.html' as user %}
+
+{% extends "layouts/status.html" %}
+
+{% set status_title = 'Activation Success' %}
+
+{% block meta %}
+<meta http-equiv="refresh" content="5;url={{ user.login_url() }}"/>
+{% endblock %}
+
+{% block status %}
+You account is activated. Please Log in <a href="{{ user.login_url() }}">here</a>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+
+{% block js %}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12">
+            {% include 'partials/_company-header.html' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7">
+            {% block page %}{% endblock %}
+        </div>
+        <div class="col-md-5">
+            {% block extras %}{% endblock %}
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Company Overview</h5>
+                    <strong>Location <i class="far fa-building"></i></strong>
+                    <p class="card-text">Wisma Shell, 3450, Jalan Teknokrat 3, 63000, Cyberjaya, Selangor Darul Ehsan,
+                        Malaysia</p>
+
+                    <strong>Website <i class="fas fa-link"></i></strong>
+                    <p class="card-text"><a href="https://www.domain.com" target="_blank">https://www.domain.com</a></p>
+
+                    <strong>Company Size <i class="fas fa-users"></i></strong>
+                    <p class="card-text">1 - 9 Employees</p>
+
+                    <strong>Dress Code <i class="fas fa-hat-cowboy-side"></i></strong>
+                    <p class="card-text">Casual (e.g. T-shirts)</p>
+
+                    <strong>Spoken Language <i class="far fa-comments"></i></strong>
+                    <p class="card-text">English, Malay, Chinese</p>
+
+                    <p class="card-text mt-5">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

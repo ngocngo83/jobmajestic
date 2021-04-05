@@ -1,0 +1,84 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+
+{% for i in range(1,10) %}
+<div class="card shadow mb-3 rounded-lg">
+    <div class="row no-gutters">
+        <div class="col-sm-1">
+            <a href="{{ s.job_landing_url() }}">
+                <img src="{{ f.default_company_logo() }}" class="card-img" alt="{{ 'Company Name' | title }}">
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body pb-0 pt-2">
+                <h6 class="card-title mb-1">
+                    <a href="{{ s.job_landing_url() }}">{{ 'Job Title' | title }}</a>
+                </h6>
+                <p class="card-text mb-2">
+                    <i class="far fa-clock"></i>
+                    <a href="{{ s.job_type_url('fulltime') }}" class="badge badge-primary">Full Time</a>
+                    <a href="{{ s.job_type_url('parttime') }}" class="badge badge-secondary">Part Time</a>
+                    <a href="{{ s.job_type_url('contract') }}" class="badge badge-info">Contract</a>
+                    <a href="{{ s.job_type_url('intern') }}" class="badge badge-warning">Internship</a>
+                    <a href="{{ s.job_type_url('freelance') }}" class="badge badge-light">Freelance</a>
+                <blockquote>
+                    <footer class="blockquote-footer">
+                        <i class="fas fa-map-marker-alt"></i> Kuala Lumpur&nbsp;
+                        <i class="fas fa-building"></i> <a href="{{ s.company_landing_url() }}">{{ 'Company Name' |
+                        title }}</a>&nbsp;
+                        <i class="fas fa-th"></i> <a href="{{ s.job_category_url('admin') }}">{{ 'Job Category' | title
+                        }}</a>
+                    </footer>
+                </blockquote>
+                </p>
+                {#<p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                additional content. This content is a little bit longer.</p>#}
+            </div>
+        </div>
+        <div class="col-sm-1 d-flex align-items-center justify-content-center py-3">
+            $ 2500.00
+        </div>
+
+        {% if sent %}
+        <div class="col-sm-2 d-flex align-items-center justify-content-center text-muted">
+            <small>Applied on 12 Aug 2020</small>
+        </div>
+        <div class="col-sm-2 d-flex align-items-center justify-content-center py-3">
+            Pending
+        </div>
+        {% elif rejected %}
+        <div class="col-sm-2 d-flex align-items-center justify-content-center text-muted">
+            <small>Applied on 12 Aug 2020</small>
+        </div>
+        <div class="col-sm-2 d-flex align-items-center justify-content-center py-3">
+            Rejected
+        </div>
+        {% elif saved %}
+        {% set job_applied = false %}
+        <div class="col-sm-2 d-flex align-items-center justify-content-center">
+            {% if job_applied %}
+            <a class="btn btn-dark btn-sm"><i class="fas fa-envelope"></i> Applied</a>
+            {% else %}
+            <a href="javascript:void(0)" rel="nofollow" class="btn btn-dark btn-sm apply">
+                <i class="far fa-envelope"></i> Apply Now</a>
+            {% endif %}
+        </div>
+        <div class="col-sm-2 d-flex align-items-center justify-content-center py-3">
+            <small>
+                <a href="javascript:void(0)" rel="nofollow"><i class="fas fa-share-alt"></i> Share</a>
+                <a href="javascript:void(0)" rel="nofollow" class="ml-2 bookmark"><i class="fas fa-window-close"></i>
+                    Abandon</a>
+            </small>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+{#
+<div class="text-center my-4">
+    <button type="button" class="btn btn-primary">Click for more jobs</button>
+    <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Loading...
+    </button>
+</div>#}

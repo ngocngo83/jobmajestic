@@ -1,0 +1,186 @@
+/**
+https://coolors.co/4c4d4f-14342b-e7e63c-d5ebdc-ffffff
+https://coolors.co/4c4d4f-14342b-e7e63c-bbdfc5-ffffff
+https://coolors.co/4c4d4f-14342b-e7e63c-e2f3e8-ffffff
+https://coolors.co/4c4d4f-14342b-e7e63c-fdfded-ffffff
+ */
+/* yellow */
+/* grey */
+/* white */
+/* dark green */
+/* ivory */
+header #main {
+  background-color: #232e3c;
+  opacity: 90%; }
+  header #main .container-fluid {
+    max-width: 1320px;
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto; }
+    header #main .container-fluid .profile-nav a.active {
+      background-color: #E7E63C; }
+    header #main .container-fluid .nav-link {
+      color: #FFFFFF; }
+    header #main .container-fluid #navbarSupportedContent {
+      margin-left: 20px; }
+      header #main .container-fluid #navbarSupportedContent .navbar-nav {
+        margin-right: 60px; }
+      header #main .container-fluid #navbarSupportedContent .navbar-text {
+        margin-left: 40px; }
+        header #main .container-fluid #navbarSupportedContent .navbar-text a {
+          margin-right: 20px;
+          color: #FFFFFF;
+          text-decoration: none; }
+        header #main .container-fluid #navbarSupportedContent .navbar-text .btn-post-job {
+          background-color: #232e3c;
+          border-color: #FFFFFF;
+          border: 2px solid #FFFFFF;
+          border-radius: 0; }
+        header #main .container-fluid #navbarSupportedContent .navbar-text .btn-post-job:hover {
+          color: #232e3c;
+          background-color: #FFFFFF; }
+    header #main .container-fluid .navbar-toggler, header #main .container-fluid .high-light {
+      color: #E7E63C; }
+    header #main .container-fluid .btn-secondary:not(:disabled):not(.disabled).active,
+    header #main .container-fluid .btn-secondary:not(:disabled):not(.disabled):active,
+    header #main .container-fluid .show > .btn-secondary.dropdown-toggle {
+      color: #232e3c;
+      background-color: #FFFFFF;
+      border-color: #FFFFFF; }
+    header #main .container-fluid .btn-primary {
+      background-color: #FFFFFF;
+      border-color: #FFFFFF;
+      color: #232e3c; }
+    @media (min-width: 30em) {
+      header #main .container-fluid .main-logo img {
+        max-width: 20px; } }
+    @media (min-width: 40em) {
+      header #main .container-fluid .main-logo img {
+        max-width: 240px; } }
+
+p.card-text {
+  font-size: smaller; }
+
+div.card-footer {
+  font-size: smaller; }
+
+img.card-logo {
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+.margin-10 {
+  margin: 10px; }
+
+.carousel-caption {
+  top: 5rem;
+  /*bottom: 15rem;*/
+  z-index: 10; }
+
+.carousel-item {
+  height: 32rem; }
+
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem; }
+
+.carousel-caption h5 {
+  font-size: 63px; }
+
+.carousel-caption p {
+  font-size: 20px; }
+
+@media (min-width: 40em) {
+  .carousel {
+    min-height: 300px; }
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    line-height: 1.4; } }
+
+body {
+  background-color: #FFFFFF;
+  color: #14342B; }
+
+footer {
+  margin-top: auto; }
+
+/*main > .container {
+  font-size: smaller;
+}*/
+a, a:hover {
+  color: #232e3c; }
+
+.main-logo img {
+  vertical-align: unset; }
+
+.modal-header {
+  background-color: #E7E63C; }
+
+.social-buttons i, .social-buttons a {
+  color: #E7E63C;
+  font-size: 22px;
+  margin-right: 5px; }
+
+.footer {
+  background-color: #232e3c;
+  font-size: smaller; }
+
+.footer > .container {
+  color: #FFFFFF; }
+
+.footer a {
+  color: #FFFFFF; }
+
+#newsletterSubscription {
+  background-color: #E7E63C; }
+
+.sitemap {
+  background-color: #232e3c;
+  color: #FDFDED;
+  font-size: smaller; }
+
+.sitemap h6 {
+  color: #E7E63C;
+  text-transform: capitalize; }
+
+.sitemap a {
+  color: #FDFDED; }
+
+code {
+  font-size: 80%; }
+
+.btn-primary {
+  background-color: #14342B;
+  border-color: #14342B;
+  font-size: smaller; }
+
+.btn-primary:hover {
+  background-color: #232e3c; }
+
+.btn-primary:disabled {
+  background-color: #232e3c;
+  border-color: #232e3c; }
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: #FFFFFF;
+  background-color: #232e3c;
+  border-color: #232e3c; }
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #232e3c; }
+
+.btn-facebook {
+  background-color: #3b5998; }
+
+.card-text {
+  color: #232e3c; }

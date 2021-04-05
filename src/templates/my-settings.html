@@ -1,0 +1,99 @@
+{% import 'macros/button.html' as btn %}
+{% import 'macros/form.html' as form %}
+{% import 'macros/user.html' as user %}
+{% import 'macros/candidate.html' as c %}
+
+{% set active_menu_item = 'settings' %}
+
+{% extends "layouts/candidate-base.html" %}
+
+{% block js %}{% endblock %}
+
+{% set page_title = 'My Account' %}
+{% set page_description = 'Fields marked with "*" are required.' %}
+
+{% block page %}
+{{ form.alert() }}
+{{ form.alert('info', 'Update success!') }}
+<form method="post">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Display Info</h5>
+            <div class="form-group row">
+                <label for="username" class="col-sm-3 col-form-label">Username *</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" maxlength="50" id="username" required value="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Change Password</h5>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Password</label>
+                <div class="col-sm-3">
+                    <a href="{{ user.change_password_url() }}" class="btn btn-sm btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Contact Info</h5>
+            <div class="form-group row">
+                <label for="email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-4">
+                    <a href="{{ c.my_profile_about_url() }}" class="btn btn-sm btn-secondary">Edit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Subscription</h5>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="jobAlert">
+                        <label class="custom-control-label" for="jobAlert">Receive job alerts email</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="profileReminder">
+                        <label class="custom-control-label" for="profileReminder">Receive profile update
+                            reminder</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Social Account</h5>
+            <div class="form-group row">
+                <label for="socialStatus" class="col-sm-3 col-form-label">Status</label>
+                <div class="col-sm-4">
+                    <input type="text" readonly class="form-control-plaintext" id="socialStatus" value="Unlink">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contactNumber" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-4">
+                    {{ btn.facebook() }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <p class="text-center">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </p>
+        </div>
+    </div>
+</form>
+{% endblock %}

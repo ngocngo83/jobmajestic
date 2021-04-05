@@ -1,0 +1,43 @@
+{% import 'macros/form.html' as form %}
+{% import 'macros/path.html' as f %}
+
+{% set active_menu_item = 'profile' %}
+{% set active_side_menu = 'language' %}
+
+{% extends "layouts/candidate-base.html" %}
+
+{% set page_title = 'Languages' %}
+{% set page_description = 'Fields marked with "*" are required.' %}
+
+{% block page %}
+{{ form.alert() }}
+{{ form.alert('info', 'Update success!') }}
+<form method="post">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-row mb-3">Languages *</div>
+
+            {% for i in range(0,3) %}
+            <div class="form-row d-flex align-items-center copy-lang-row">
+                <div class="form-group col-10 col-sm-6">
+                    <select class="form-control" name="">
+                        <option disabled hidden selected>Choose ...</option>
+                        <option>English</option>
+                        <option>Bahasa Melayu</option>
+                    </select>
+                </div>
+                <a class="btn btn-sm mb-3 remove-lang"><i class="fas fa-minus-circle"></i></a>
+            </div>
+            {% endfor %}
+            <div class="form-row">
+                <a class="btn btn-sm" id="addLang"><i class="fas fa-plus-circle"></i> Add language</a>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

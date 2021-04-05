@@ -1,0 +1,90 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+
+{% set job_saved = false %}
+{% set job_applied = false %}
+
+{% for i in range(1,10) %}
+<div class="card shadow mb-3 rounded-lg">
+    <div class="row no-gutters">
+        <div class="col-sm-12">
+            {% if show_logo %}
+            <a href="{{ s.company_landing_url() }}">
+                <img src="{{ f.default_company_logo() }}" class="float-right margin-10"
+                     alt="{{ 'Company Name' | title }}">
+            </a>
+            {% endif %}
+            <div class="card-body">
+                <h6 class="card-title">
+                    <a href="company-job-landing.html">{{ 'Job Title' | title }}</a>
+                </h6>
+                <p class="my-2"><a href="{{ s.job_category_url('admin') }}">Job Category</a></p>
+                <p class="card-text">
+                    <i class="far fa-clock"></i>
+                    <a href="{{ s.job_type_url('fulltime') }}" class="badge badge-primary">Full Time</a>
+                    <a href="{{ s.job_type_url('parttime') }}" class="badge badge-secondary">Part Time</a>
+                    <a href="{{ s.job_type_url('contract') }}" class="badge badge-info">Contract</a>
+                    <a href="{{ s.job_type_url('intern') }}" class="badge badge-warning">Internship</a>
+                    <a href="{{ s.job_type_url('freelance') }}" class="badge badge-light">Freelance</a>
+                </p>
+                <p class="card-text">
+                    <i class="fas fa-dollar-sign"></i>
+                    {% if is_guest %}
+                    <a href="javascript:void(0)" rel="nofollow" data-toggle="modal"
+                       data-target="#loginModal">Salary...</a>
+                    {% else %}
+                    2500.00
+                    {% endif %}
+                    <i class="fas fa-map-marker-alt"></i> Kuala Lumpur
+                </p>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+            </div>
+
+            <div class="card-footer p-1 d-flex">
+                <div class="p-2">
+                    <small>
+                        {% if is_guest %}
+                        <a href="javascript:void(0)" rel="nofollow" data-toggle="modal" data-target="#loginModal"><i
+                                class="far fa-bookmark"></i> Save</a>
+                        {% else %}
+                        <a href="javascript:void(0)" rel="nofollow" class="bookmark" data-url="">
+                            {% if job_saved %}
+                            <i class="fas fa-bookmark"></i> Saved
+                            {% else %}
+                            <i class="far fa-bookmark"></i> Save
+                            {% endif %}
+                        </a>
+                        {% endif %}
+                    </small>
+                </div>
+                <div class="p-2">
+                    <small><a href="javascript:void(0)" rel="nofollow"><i class="fas fa-share-alt"></i>
+                        Share</a></small>
+                </div>
+
+                <div class="p-2">
+                    <small>
+                        {% if is_guest %}
+                        <a href="javascript:void(0)" rel="nofollow" data-toggle="modal" data-target="#loginModal"><i
+                                class="far fa-envelope"></i> Apply</a>
+                        {% else %}
+                        <a href="javascript:void(0)" rel="nofollow" class="apply" data-url="">
+                            {% if job_applied %}
+                            <i class="fas fa-envelope"></i> Applied
+                            {% else %}
+                            <i class="far fa-envelope"></i> Apply
+                            {% endif %}
+                        </a>
+                        {% endif %}
+                    </small>
+                </div>
+
+                <div class="ml-auto float-right p-2 d-sm-none d-md-block">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

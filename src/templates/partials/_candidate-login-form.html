@@ -1,0 +1,58 @@
+{% import 'macros/form.html' as form %}
+{% import 'macros/button.html' as btn %}
+{% import 'macros/user.html' as user %}
+{% import 'macros/site.html' as s %}
+
+<p>Login to view salary</p>
+<form action="{{ user.login_url() }}" method="post" autocomplete="on">
+    {{ btn.facebook() }}
+    <div class="row py-2">
+        <div class="col-sm-5 d-none d-md-block">
+            <hr>
+        </div>
+        <div class="col-sm-2 text-muted text-center py-1">OR</div>
+        <div class="col-sm-5 d-none d-md-block">
+            <hr>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="email-login">Email</label>
+            <input type="email" id="email-login" class="form-control" maxlength="50" autocomplete="email" autofocus
+                   required name="">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-12">
+            <label for="current-password">Password</label>
+            <div class="input-group">
+                <input type="password" id="current-password" class="form-control current-password" maxlength="12"
+                       required name="">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" checked>
+                <label class="form-check-label" for="gridCheck">
+                    Remember me
+                </label>
+            </div>
+        </div>
+
+        <div class="col-sm-6 text-center text-md-right mt-2 mt-md-0">
+            <a href="{{ user.password_recovery_url() }}" rel="nofollow">Forgot Password?</a>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary col-12">Log In</button>
+</form>
+<p class="text-center my-3">
+    New candidate? <a href="{{ user.signup_url() }}" rel="nofollow" data-dismiss="modal" data-toggle="modal"
+                      data-target="#signupModal">FREE Sign up Now</a>
+</p>
+<p class="text-muted"><small>
+    By login, I have read and agreed to JobMajestic.com <a href="{{ s.terms_url() }}" rel="nofollow">Terms of Use</a>
+    and <a href="{{ s.privacy_url() }}" rel="nofollow">Privacy Policy</a>.
+</small></p>

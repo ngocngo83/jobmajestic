@@ -1,0 +1,84 @@
+{% macro csrf() %}
+<input type="hidden" name="{{ csrf.keys.name }}" value="{{ csrf.name }}"/>
+<input type="hidden" name="{{ csrf.keys.value }}" value="{{ csrf.value }}"/>
+{% endmacro %}
+
+{% macro _extras(attributes) %}
+{% set extras = [] %}
+{% for attribute, attribute_value in attributes %}
+{% set extras = extras|merge([attribute ~ '=' ~ attribute_value]) %}
+{% endfor %}
+{{ extras|join(' ') }}
+{% endmacro %}
+
+{% macro _select_options(options, value = null, attributes = {}) %}
+{% if attributes.placeholder is defined %}
+<option value="">{{ attributes.placeholder }}</option>
+{% endif %}
+
+{% for key, data in options %}
+{% if key == value %}
+<option value="{{ key }}" selected="selected">{{ data }}</option>
+{% else %}
+<option value="{{ key }}">{{ data }}</option>
+{% endif %}
+{% endfor %}
+{% endmacro %}
+
+{% macro select(name, options, value = null, attributes = {}) %}
+<select name="{{ name }}" {{ _self._extras(attributes) }}>
+    {{ _self._select_options(options, value, attributes) }}
+</select>
+{% endmacro %}
+
+{% macro select2(name, options, value = null, attributes = {}) %}
+<select class="input-large" name="{{ name }}" {{ _self._extras(attributes) }} multiple>
+    {{ _self._select_options(options, value, attributes) }}
+</select>
+{% endmacro %}
+
+{% macro select_multiple(name, options, value = null, attributes = {}) %}
+<select class="form-control" name="{{ name }}" {{ _self._extras(attributes) }} multiple>
+    {{ _self._select_options(options, value, attributes) }}
+</select>
+{% endmacro %}
+
+{% macro select_picker(name, options, value = null, attributes = {}) %}
+<select class="form-control selectpicker" name="{{ name }}" {{ _self._extras(attributes) }}>
+    {% if attributes.placeholder is defined %}
+    <option value="">{{ attributes.placeholder }}</option>
+    {% endif %}
+
+    {% for key, data in options %}
+
+    <option value="{{ key }}" selected="selected">{{ data }}</option>
+    {% endfor %}
+</select>
+{% endmacro %}
+
+{% macro alert(type = 'warning', message = 'Please fix the following errors.') %}
+<div class="alert alert-{{ type }} alert-dismissible" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endmacro %}
+
+{% macro checkboxes(name, options, value = '', id = 'inlineCheckbox') %}
+{% for key, label in options %}
+<label class="checkbox-inline icheckbox">
+    <input type="checkbox" id="{{ id }}" name="{{ name }}" value="{{ key }}" {{ 'checked' if key in value else '' }} >
+    {{ label }}
+</label>
+{% endfor %}
+{% endmacro %}
+
+{% macro checkbox(name, options, value = '', id = 'checkbox') %}
+{% for key, label in options %}
+<label class="checkbox icheckbox">
+    <input type="checkbox" id="{{ id }}" name="{{ name }}" value="{{ key }}" {{ 'checked' if key == value else '' }} >
+    {{ label }}
+</label>
+{% endfor %}
+{% endmacro %}

@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+
+{% block js %}{% endblock %}
+
+{% block content %}
+<div class="container py-5 page">
+    {% if page_title or page_sub_title or quote %}
+    <div class="row my-4">
+        <div class="col-12">
+            {% if page_title %}
+            <h1 class="h2">{{ page_title | title }}</h1>
+            {% endif %}
+
+            {% if page_sub_title %}
+            <h2 class="h5 text-muted">{{ page_sub_title }}</h2>
+            {% endif %}
+
+            {% if quote %}
+            <blockquote>
+                <footer class="blockquote-footer">{{ quote }}</footer>
+            </blockquote>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% block page %}{% endblock %}
+</div>
+{% endblock %}

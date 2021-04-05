@@ -1,0 +1,142 @@
+{% import 'macros/form.html' as form %}
+{% import 'macros/path.html' as f %}
+
+{% set active_menu_item = 'profile' %}
+{% set active_side_menu = 'experience' %}
+
+{% extends "layouts/candidate-base.html" %}
+
+{% set page_title = 'Experience' %}
+{% set page_description = 'Fields marked with "*" are required.' %}
+
+{% block page %}
+{{ form.alert() }}
+{{ form.alert('info', 'Update success!') }}
+<form method="post">
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-sm-6">
+                    <label for="yearsOfExperience">Working since *</label>
+                    <select class="custom-select" id="yearsOfExperience">
+                        <option disabled hidden selected>Choose...</option>
+                        <option value="1">2000</option>
+                        <option value="2">2001</option>
+                        <option value="3">2002</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row my-3">
+                <div class="form-group col-sm-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="isFreshGraduate" name="" value="1">
+                        <label class="form-check-label" for="isFreshGraduate">
+                            Is fresh graduate
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-3">
+        <a class="btn btn-sm" id="addExp"><i class="fas fa-plus-circle"></i> Add experience row</a>
+    </div>
+
+    {% for i in range(0,1) %}
+    <div class="mb-4 copy-exp-row">
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="form-row d-flex">
+                    <div class="form-group col-sm-6 text-right order-sm-2">
+                        <a class="btn btn-sm remove-exp"><i class="fas fa-minus-circle"></i> Remove</a>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="position">Position Title *</label>
+                        <input type="text" class="form-control" maxlength="50" required name="" value="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="company{{ i }}">Company Name *</label>
+                        <input type="text" class="form-control" maxlength="50" required name="" value="">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="industry{{ i }}">Industry *</label>
+                        <select class="custom-select" required>
+                            <option disabled hidden selected>Choose ...</option>
+                            <option value="1">2000</option>
+                            <option value="2">2001</option>
+                            <option value="3">2002</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-6">
+                        <label for="fromDate{{ i }}">Joined from *</label>
+                        <div class="input-group">
+                            <select class="custom-select w-25" name="">
+                                <option disabled hidden selected>From month ...</option>
+                                <option value="1">Jan</option>
+                                <option value="1">Feb</option>
+                            </select>
+                            <div class="input-group-append">
+                                <select class="form-control" name="">
+                                    <option disabled hidden selected>From year ...</option>
+                                    <option>2000</option>
+                                    <option>2001</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="toDate{{ i }}">To</label>
+                        <div class="input-group">
+                            <select class="custom-select to-month w-25" name="">
+                                <option disabled hidden selected>To month ...</option>
+                                <option value="1">Jan</option>
+                                <option value="1">Feb</option>
+                            </select>
+                            <div class="input-group-append">
+                                <select class="form-control to-year" name="">
+                                    <option disabled hidden selected>To year ...</option>
+                                    <option>2000</option>
+                                    <option>2001</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-12 offset-sm-6">
+                        <div class="form-check">
+                            <input class="form-check-input working-here" type="checkbox" name="" value="1">
+                            <label class="form-check-label" for="workingHere">
+                                Currently working here
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-sm-12">
+                        <label for="experience{{ i }}">Experience Description</label>
+                        <textarea class="form-control" rows="10" name=""></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="card shadow">
+        <div class="card-body">
+            <button type="submit" class="btn btn-primary btn-lg">Save</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% import 'macros/path.html' as f %}
+
+{% extends "layouts/base.html" %}
+
+{% set newsletter_subscription = true %}
+
+{% block js %}{% endblock %}
+
+{% block content %}
+<div class="container mt-3">
+
+    {% include 'components/_carousel-sliders.html' %}
+
+    <h1 class="h4 mt-3">Featured Companies</h1>
+    <div class="row">
+        <div class="col-6 col-md-2 mb-2">
+            <a href="company-landing.html"><img src="{{ f.default_company_logo() }}" class="img-thumbnail"></a>
+        </div>
+        <div class="col-6 col-md-2 mb-2">
+            <a href="company-landing.html"><img src="{{ f.default_company_logo() }}" class="img-thumbnail"></a>
+        </div>
+        <div class="col-6 col-md-2 mb-2">
+            <a href="company-landing.html"><img src="{{ f.default_company_logo() }}" class="img-thumbnail"></a>
+        </div>
+        <div class="col-6 col-md-2 mb-2">
+            <a href="company-landing.html"><img src="{{ f.default_company_logo() }}" class="img-thumbnail"></a>
+        </div>
+        <div class="col-6 col-md-2 mb-2">
+            <a href="company-landing.html"><img src="{{ f.default_company_logo() }}" class="img-thumbnail"></a>
+        </div>
+        <div class="col-6 col-md-2 mb-2">
+            <a href="company-landing.html"><img src="{{ f.default_company_logo() }}" class="img-thumbnail"></a>
+        </div>
+    </div>
+
+    <h1 class="h4 m-2">Events</h1>
+    <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ f.sample_event_tb(1) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Event 1</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ f.sample_event_tb(2) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Event 2</h5>
+                    <p class="card-text">This is a short card.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100">
+                <img src="{{ f.sample_event_tb(3) }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Event 3</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="h4 m-2">News</h1>
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ f.sample_event_tb(1) }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">News 1</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ f.sample_event_tb(3) }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">News 2</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

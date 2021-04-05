@@ -1,0 +1,64 @@
+{% import 'macros/form.html' as form %}
+
+{% set active_menu_item = 'profile' %}
+{% set active_side_menu = 'resume' %}
+
+{% extends "layouts/candidate-base.html" %}
+
+{% block js %}{% endblock %}
+
+{% set page_title = 'Uploaded Resume' %}
+{% set page_description = 'Fields marked with "*" are required.' %}
+
+{% block page %}
+{{ form.alert() }}
+{{ form.alert('info', 'Update success!') }}
+<form method="post" enctype="multipart/form-data">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-row mb-2">Upload your own resume *</div>
+            <div class="form-row">
+                <div class="form-group col-sm-10 offset-sm-2">
+                    <ul class="pl-3 my-2">
+                        <li>File must be in <strong>PDF (.pdf) or MS Word (.docx)</strong> format</li>
+                        <li>File size must not exceed <strong>30KB</strong></li>
+                    </ul>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="uploadAvatar"
+                               accept="application/pdf,.pdf,application/msword,.docx"
+                               required
+                               name=""
+                        >
+                        <label class="custom-file-label w-75" for="uploadAvatar">Choose file</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg my-2">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="card">
+    <div class="card-body">
+        <div class="form-row mb-2">Your latest resume</div>
+        <div class="form-row">
+            <div class="col-sm-10 offset-sm-2">
+                <dl class="row">
+                    <dt class="col-sm-3">File name</dt>
+                    <dd class="col-sm-9">uploaded-resume-file-name.pdf</dd>
+
+                    <dt class="col-sm-3">Uploaded</dt>
+                    <dd class="col-sm-9">31 AUG 2020 12:00 PM</dd>
+                </dl>
+                <p>NOTE: All employers are accessible to your latest resume.</p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-sm-10 offset-sm-2 d-flex align-items-center">
+                <a href="javascript:void(0)" class="btn btn-secondary btn-sm">view</a>
+                <a href="javascript:void(0)" class="btn btn-secondary btn-sm ml-2">Remove/ Replace</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

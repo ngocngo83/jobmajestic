@@ -1,0 +1,12 @@
+{% import 'macros/path.html' as f %}
+
+<div class="card shadow mb-3">
+    <img src="{{ f.default_company_header_img() }}" class="card-img" alt="Job Majestic" width="725" height="210">
+    <div class="card-img-overlay">
+        <img src="{{ f.default_company_logo() }}" class="img-thumbnail float-left mr-3" alt="...">
+        <h5 class="card-title">
+            <a href="company-landing.html">{{ 'Company Name' | title }}</a>
+        </h5>
+        <p class="card-text"><a href="companies.html">Industry Name</a></p>
+    </div>
+</div>

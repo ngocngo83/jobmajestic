@@ -1,0 +1,18 @@
+{% import 'macros/form.html' as form %}
+
+{% extends "layouts/full-page.html" %}
+
+{% set meta_robots = 'noindex,nofollow' %}
+
+{% block page %}
+<div class="row mx-1 d-flex justify-content-center">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mb-4">Candidate Sign Up</h4>
+            {{ form.alert() }}
+            {{ form.alert('info', 'Update success!') }}
+            {% include 'partials/_candidate-sign-up-form.html' %}
+        </div>
+    </div>
+</div>
+{% endblock %}

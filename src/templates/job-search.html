@@ -1,0 +1,121 @@
+{% import 'macros/path.html' as f %}
+
+{% extends "layouts/base.html" %}
+
+{% set meta_description = 'Job result' %}
+
+{% set count = 1 %}
+
+{% block js %}
+{{ f.module(['toggle','ajax_form']) }}
+<script src="{{ f.js('job.min.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-1">
+        <div class="col-12">
+            <form id="filterJobForm" method="post" action="https://uat.jobmajestic.com/job/search">
+                <div class="form-row">
+                    <div class="col-md-8 my-1">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-search"></i></div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Job title/ keywords" maxlength="100"
+                                   name="title">
+                        </div>
+                    </div>
+                    <div class="col-md-4 my-1">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Location. e.g.: kuala lumpur"
+                                   name="location">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-3 my-1">
+                        <select id="jobType" class="custom-select">
+                            <option selected>Job Type ...</option>
+                            <option>Full Time</option>
+                            <option>Part Time</option>
+                            <option>Contract</option>
+                            <option>Internship</option>
+                            <option>Freelance</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 my-1">
+                        <select id="job-category" class="custom-select">
+                            <option selected>Job Category ...</option>
+                            <option>...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 my-1">
+                        <small><span for="minSalary">Min Salary: MYR <output
+                                id="minSalaryO">2500</output></span></small>
+                        <input type="range" class="custom-range" min="1500" max="10000" step="500" id="minSalary"
+                               oninput="minSalaryO.value=minSalary.value" value="1500">
+                    </div>
+                    <div class="col-md-2 my-1">
+                        <small><span for="maxSalary">Max Salary: MYR <output
+                                id="maxSalaryO">50000</output></span></small>
+                        <input type="range" class="custom-range" min="10000" max="30000" step="500" id="maxSalary"
+                               oninput="maxSalaryO.value=maxSalary.value" value="30000">
+                    </div>
+                    <div class="col-md-2 my-1">
+                        <button type="submit" class="btn btn-primary form-control"><i class="fas fa-filter"></i> Search
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-6 text-justify">
+            Total <span id="total">16,227</span> jobs
+        </div>
+
+        {% if sort %}
+        <div class="col-6 text-right">
+            <div class="btn-group">
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="sortJobsBy"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-sort-amount-up"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sortJobsBy">
+                        <button class="dropdown-item" type="button">Salary</button>
+                        <button class="dropdown-item" type="button">Job Title</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="row justify-content-center">
+        <div id="results" class="col-md-8">
+            {% if count == 0 %}
+            <div class="text-center">No job found</div>
+            {% else %}
+            {% set show_logo = true %}
+            {% include 'partials/_job-cards.html' %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center my-4">
+        <div id="end" class="text-center mt-3">End of records</div>
+        <button id="next" type="button" class="btn btn-primary">Click for more jobs</button>
+        <button id="loading" class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+    </div>
+</div>
+{% endblock %}
