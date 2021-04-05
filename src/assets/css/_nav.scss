@@ -1,9 +1,11 @@
 header {
-
   #main {
+    &.with-alert{
+      margin-top: 38px;
+    }
     background-color: $navBgColor;
     opacity: 90%;
-
+    height: 73px;
     .container-fluid {
       max-width: 1320px;
       width: 100%;
@@ -71,7 +73,8 @@ header {
 
       @media (min-width: 40em) {
         .main-logo img {
-          max-width: 240px;
+          max-width: 182px;
+          max-height: 37px;
         }
       }
 

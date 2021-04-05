@@ -6,102 +6,117 @@
 body {
   background-color: $bgColor;
   color: $fontColor;
+
+  .alert {
+    background-color: $alertColor;
+    top: 0px;
+    height: 38px;
+    position: fixed;
+    z-index: 100; 
+    width: 100%; 
+    text-align: center;
+    color: $bigBtnBgColor;
+    padding: 4px;
+    border-radius: 0;
+  }
+
+  a, a:hover {
+    color: $linkColor;
+  }
+
+  .main-logo img {
+    vertical-align: unset;
+  }
+
+  .modal-header {
+    background-color: $modalHeaderBgColor;
+  }
+
+  .social-buttons i, .social-buttons a {
+    color: $prime1;
+    font-size: 22px;
+    margin-right: 5px;
+  }
+
+  .footer {
+    background-color: $footerBgColor;
+    font-size: smaller;
+  }
+
+  .footer > .container {
+    color: $footerFontColor;
+  }
+
+  .footer a {
+    color: $footerFontColor;
+  }
+
+  #newsletterSubscription {
+    background-color: $newsletterSubscriptionBgColor;
+  }
+
+  .sitemap {
+    background-color: $sitemapBgColor;
+    color: $sitemapFontColor;
+    font-size: smaller;
+  }
+
+  .sitemap h6 {
+    color: $sitemapHeaderColor;
+    text-transform: capitalize;
+  }
+
+  .sitemap a {
+    color: $sitemapLinkColor;
+  }
+
+  code {
+    font-size: 80%;
+  }
+
+  .btn-primary {
+    background-color: $btnPrimaryColor;
+    border-color: $btnPrimaryColor;
+    font-size: smaller;
+  }
+
+  .btn-primary:hover {
+    background-color: $btnSecondaryColor;
+  }
+
+  .btn-primary:disabled {
+    background-color: $btnSecondaryColor;
+    border-color: $btnSecondaryColor;
+  }
+
+  .btn-primary:not(:disabled):not(.disabled).active,
+  .btn-primary:not(:disabled):not(.disabled):active,
+  .show > .btn-primary.dropdown-toggle {
+    color: $dropdownMenuBgColor;
+    background-color: $btnSecondaryColor;
+    border-color: $btnSecondaryColor;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+    color: $dropdownMenuBgColor;
+    text-decoration: none;
+    background-color: $btnSecondaryColor;
+  }
+
+  .btn-facebook {
+    background-color: #3b5998;
+  }
+
+  .card-text {
+    color: $cardTextColor;
+  }
+  footer{
+      margin-top: auto;
+  }
 }
 
-footer{
-    margin-top: auto;
-}
+
 /*main > .container {
   font-size: smaller;
 }*/
 
-a, a:hover {
-  color: $linkColor;
-}
-
-.main-logo img {
-  vertical-align: unset;
-}
-
-.modal-header {
-  background-color: $modalHeaderBgColor;
-}
-
-.social-buttons i, .social-buttons a {
-  color: $prime1;
-  font-size: 22px;
-  margin-right: 5px;
-}
-
-.footer {
-  background-color: $footerBgColor;
-  font-size: smaller;
-}
-
-.footer > .container {
-  color: $footerFontColor;
-}
-
-.footer a {
-  color: $footerFontColor;
-}
-
-#newsletterSubscription {
-  background-color: $newsletterSubscriptionBgColor;
-}
-
-.sitemap {
-  background-color: $sitemapBgColor;
-  color: $sitemapFontColor;
-  font-size: smaller;
-}
-
-.sitemap h6 {
-  color: $sitemapHeaderColor;
-  text-transform: capitalize;
-}
-
-.sitemap a {
-  color: $sitemapLinkColor;
-}
-
-code {
-  font-size: 80%;
-}
-
-.btn-primary {
-  background-color: $btnPrimaryColor;
-  border-color: $btnPrimaryColor;
-  font-size: smaller;
-}
-
-.btn-primary:hover {
-  background-color: $btnSecondaryColor;
-}
-
-.btn-primary:disabled {
-  background-color: $btnSecondaryColor;
-  border-color: $btnSecondaryColor;
-}
-
-.btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active,
-.show > .btn-primary.dropdown-toggle {
-  color: $dropdownMenuBgColor;
-  background-color: $btnSecondaryColor;
-  border-color: $btnSecondaryColor;
-}
-
-.dropdown-item.active, .dropdown-item:active {
-  color: $dropdownMenuBgColor;
-  text-decoration: none;
-  background-color: $btnSecondaryColor;
-}
-
-.btn-facebook {
-  background-color: #3b5998;
-}
-
-.card-text {
-  color: $cardTextColor;
-}

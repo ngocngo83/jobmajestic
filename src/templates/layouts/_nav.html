@@ -2,9 +2,12 @@
 {% import 'macros/site.html' as s %}
 {% import 'macros/user.html' as user %}
 {% import 'macros/candidate.html' as c %}
-
+{% set extra_class = '' %}
+{% if alert %}
+    {% set extra_class = 'with-alert' %}
+{% endif %}
 <div class="container">
-    <nav id="main" class="navbar navbar-expand-lg navbar-light fixed-top px-md-5">
+    <nav id="main" class="navbar navbar-expand-lg navbar-light fixed-top px-md-5 {{extra_class}}">
         <div class="container-fluid">
             <a class="navbar-brand main-logo" href="{{ s.home_url() }}">
                 <img src="{{ f.img('logo/job-majestic-v3-50.png') }}" width="256" height="50">

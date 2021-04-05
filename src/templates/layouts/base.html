@@ -1,6 +1,7 @@
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
 {% set is_guest = true %}
+{% set alert = true %}
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
@@ -32,6 +33,11 @@
     <link rel="shortcut icon" href="{{ f.ico('favicon.ico') }}"/>
 </head>
 <body class="d-flex flex-column h-100">
+{% if alert %}    
+<div class="alert">
+    <p>This is an announcement/alert section option 1</p>
+</div>
+{% endif %}
 <header class="mb-1 mb-4 mb-md-5 scroll-base">
     {% include 'layouts/_nav.html' %}
 </header>
