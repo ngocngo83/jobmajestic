@@ -33,11 +33,26 @@ body {
   }
 
   .social-buttons i, .social-buttons a {
-    color: $prime1;
+    color: $prime6;
     font-size: 22px;
     margin-right: 5px;
   }
-
+.social-buttons .circle{
+	border-radius: 50%;
+    //padding: 5px;
+	// margin: 0.15em;
+	// font-size: 3em;
+}
+.fa-facebook {
+	background: $prime3;
+	color: $prime6;
+    padding: .15em .35em;
+}
+.fa-instagram, .fa-twitter, .fa-linkedin-square {
+	background: $prime3;
+	color: $prime6;
+    padding: 0.15em .2em !important;
+}
   .footer {
     background-color: $footerBgColor;
     font-size: smaller;
@@ -64,7 +79,7 @@ body {
   .sitemap h6 {
     color: $sitemapHeaderColor;
     /*text-transform: capitalize;*/
-    font-family: 'MADE TOMMY REGULAR';
+    font-family: 'made-tommy-regular';
     font-size: 14px;
   }
 
@@ -74,13 +89,24 @@ body {
   }
   .sitemap .footer-text {
       color: $sitemapFooterText;
-      font-family: 'MADE TOMMY REGULAR';
+      font-family: 'made-tommy-regular';
       font-size: 14px;
   }
   .sitemap hr {
       opacity: 1;
       margin-top: 50px;
       margin-bottom: 50px;
+  }
+  .footer hr {
+    opacity: 1;
+    margin-top: 50px;
+  }
+  .footer .term-policy a {
+    text-decoration: none;
+  }
+  .sitemap .leftside-text {
+      font-family: 'made-tommy-regular';
+      font-size: 12px;
   }
   code {
     font-size: 80%;
@@ -131,7 +157,7 @@ body {
 
   .job-description  {
      .ui-ux-designer {
-         font-family: 'MADE TOMMY REGULAR';
+         font-family: 'made-tommy-regular';
          font-size: 2.5em;
      }
      .petronas-icon {
@@ -143,15 +169,19 @@ body {
          height: auto;
      }
   }
+  @font-face {
+    font-family: 'made-tommy-regular';
+    src: url('../fonts/MADE TOMMY Regular.otf') format('otf');
+    font-style: normal;
+    }
+    @font-face {
+        font-family: 'made-tommy-medium';
+        src: url('../fonts/MADE TOMMY Medium.otf') format('otf');
+        font-style: normal;
+    }
 }
 
 
 /*main > .container {
   font-size: smaller;
 }*/
-
-@font-face {
-    font-family: 'MADE TOMMY REGULAR';
-    src: url('../fonts/MADE TOMMY Regular.otf');
-    font-style: normal;
-}

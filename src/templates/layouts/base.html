@@ -23,6 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ f.plugin('fontawesome-free-5.14.0-web/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ f.css('main.min.css') }}">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     {% block css %}{% endblock %}
     <link rel="apple-touch-icon-precomposed" sizes="144x144"
           href="{{ f.ico('apple-touch-icon-144-precomposed.png') }}"/>
@@ -53,34 +54,12 @@
             <div class="row">
                 <div class="col-sm col-md-2">
                     <h6>Job by Locations</h6>
-                    <!-- <p class="mt-4">
-                    <h6>Job Categories</h6>
-                    {% for i in range(1,20) %}
-                    {% if i > 1 %} - {% endif %}<a href="#">{{ 'category' | title }} {{ i }}</a>
-                    {% endfor %}
-                    </p> -->
                 </div>
                 <div class="col-sm col-md-10">
                     {% for i in range(1,20) %}
                         {% if i > 1 %} | {% endif %}<a href="#" class="footer-text">{{ 'location' | title }} {{ i }}</a>
                     {% endfor %}
                 </div>
-                <!-- <div class="col-sm col-md-5 col-lg-3">
-                    <p class="social-buttons">
-                        <a href="{{ s.facebook_url() }}"
-                           target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="{{ s.instagram_url() }}"
-                           target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="{{ s.youtube_url() }}"
-                           target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="{{ s.linkedin_url() }}"
-                           target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="{{ s.tiktok_url() }}"
-                           target="_blank"><i class="fab fa-tiktok"></i></a>
-                        <a href="{{ s.whatsapp_url() }}"
-                           target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </p>
-                </div> -->
             </div>
             <div class="row job-skills">
                 <div class="col-sm col-md-2">
@@ -104,34 +83,55 @@
             </div>
             <hr class="color color-white">
             <div class="row">
-                <div class="col-sm col-md-3">
+                <div class="col-sm col-md-3 leftside-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 </div>
-                <div class="col-sm col-md-3">About</div>
-                <div class="col-sm col-md-3">About</div>
-                <div class="col-sm col-md-3">About</div>
-
-                <!-- <div class="col-sm col-md-3">
-                    Lorem
+                <div class="col-sm col-md-3">
+                    <div class="row  d-flex justify-content-start">About</div>
+                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
                 </div>
                 <div class="col-sm col-md-3">
-                    Contact
-                </div> -->
+                    <div class="row">Lorem</div>
+                    <div class="row">Lorem Ipsum</div>
+                    <div class="row">Lorem Ipsum</div>
+                    <div class="row">Lorem Ipsum</div>
+                    <div class="row">Lorem Ipsum</div>
+                </div>
+                <div class="col-sm col-md-3">
+                    <div class="row">Contact</div>
+                    <div class="row"><i class="fa fa-phone" aria-hidden="true"></i>+[61] 2654 8452</div>
+                    <div class="row"><i class="fa fa-envelope" aria-hidden="true">Lorem Ipsum</i></div>
+                    <div class="row">Lorem Ipsum dollar</div>
+                </div>
             </div>
         </div>
     </div>
     {% endblock %}
     <div class="footer py-3">
         <div class="container">
+            <hr class="color color-white">
             <div class="row">
-                <div class="col-md d-flex justify-content-center justify-content-md-end mb-3">
-                    <a href="{{ s.privacy_url() }}" class="mr-3">Privacy</a>
-                    <a href="{{ s.terms_url() }}" class="mr-3">Terms</a>
-                    <a href="{{ s.about_url() }}">About</a>
+                <div class="col-md-4 d-flex justify-content-start">Lorem ipsum dolor sit amet,</div>
+                <div class="col-md-4 d-flex justify-content-center">
+                    <p class="social-buttons">
+                        <a href="{{ s.facebook_url() }}"
+                           target="_blank"><i class="fa fa-facebook circle"></i></a>
+                        <a href="{{ s.instagram_url() }}"
+                           target="_blank"><i class="fa fa-instagram circle"></i></a>
+                        <a href="{{ s.linkedin_url() }}"
+                           target="_blank"><i class="fa fa-linkedin-square circle"></i></a>
+                        <a href="{{ s.tiktok_url() }}"
+                           target="_blank"><i class="fa fa-twitter circle"></i></a>
+                    </p>
                 </div>
-                <div class="col-md d-flex justify-content-center justify-content-md-start order-md-first">&copy; 2020
-                    Job Majestic Sdn. Bhd. All rights reserved.
+                <div class="col-md-4 d-flex justify-content-end term-policy">
+                    <a href="{{ s.privacy_url() }}" class="mr-3">Privacy Policy</a>&nbsp;&nbsp;
+                    <a href="{{ s.terms_url() }}" class="mr-3">Terms Of Service</a>
                 </div>
+                
             </div>
         </div>
     </div>
