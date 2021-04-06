@@ -87,11 +87,11 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 </div>
                 <div class="col-sm col-md-3">
-                    <div class="row  d-flex justify-content-start">About</div>
-                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
-                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
-                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
-                    <div class="row  d-flex justify-content-start">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start offset-3">About</div>
+                    <div class="row  d-flex justify-content-start offset-3">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start offset-3">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start offset-3">Lorem Ipsum</div>
+                    <div class="row  d-flex justify-content-start offset-3">Lorem Ipsum</div>
                 </div>
                 <div class="col-sm col-md-3">
                     <div class="row">Lorem</div>
@@ -101,10 +101,31 @@
                     <div class="row">Lorem Ipsum</div>
                 </div>
                 <div class="col-sm col-md-3">
-                    <div class="row">Contact</div>
-                    <div class="row"><i class="fa fa-phone" aria-hidden="true"></i>+[61] 2654 8452</div>
-                    <div class="row"><i class="fa fa-envelope" aria-hidden="true">Lorem Ipsum</i></div>
-                    <div class="row">Lorem Ipsum dollar</div>
+                    <div class="row"><div class="col-md-1">Contact</div></div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-6">
+                            +[61] 2654 8452
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-6">
+                            Lorem Ipsum
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-6">
+                            Lorem Ipsum dollar
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,8 +135,8 @@
         <div class="container">
             <hr class="color color-white">
             <div class="row">
-                <div class="col-md-4 d-flex justify-content-start">Lorem ipsum dolor sit amet,</div>
-                <div class="col-md-4 d-flex justify-content-center">
+                <div class="col-sm col-md-4 d-flex justify-content-start">Lorem ipsum dolor sit amet,</div>
+                <div class="col-sm col-md-4 d-flex justify-content-center">
                     <p class="social-buttons">
                         <a href="{{ s.facebook_url() }}"
                            target="_blank"><i class="fa fa-facebook circle"></i></a>
@@ -127,7 +148,7 @@
                            target="_blank"><i class="fa fa-twitter circle"></i></a>
                     </p>
                 </div>
-                <div class="col-md-4 d-flex justify-content-end term-policy">
+                <div class="col-sm col-md-4 d-flex justify-content-end term-policy">
                     <a href="{{ s.privacy_url() }}" class="mr-3">Privacy Policy</a>&nbsp;&nbsp;
                     <a href="{{ s.terms_url() }}" class="mr-3">Terms Of Service</a>
                 </div>
