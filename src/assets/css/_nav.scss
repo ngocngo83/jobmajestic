@@ -1,11 +1,14 @@
 header {
-  #main {
-    &.with-alert{
+  .with-alert{
       margin-top: 38px;
     }
+  #main {
+    
     background-color: $navBgColor;
-    opacity: 90%;
-    height: 73px;
+    
+    @media (min-width: 40em) {
+       height: 73px;
+    }
     .container-fluid {
       max-width: 1320px;
       width: 100%;
@@ -25,11 +28,16 @@ header {
         margin-left: 20px;
         .navbar-nav{
           margin-right: 60px;
+          li {
+            margin-right: 7px;
+          }
         }
         .navbar-text{
-          margin-left: 40px;
+          @media (min-width: 40em) {
+            margin-left: 40px;
+          }
           a {
-            margin-right: 20px;
+            margin-right: 40px;
             color: $bigBtnBgColor;
             text-decoration: none;
           }
@@ -67,7 +75,8 @@ header {
 
       @media (min-width: 30em) {
         .main-logo img {
-          max-width: 20px;
+          max-width: 124px;
+          max-height: 25px;
         }
       }
 
@@ -77,7 +86,41 @@ header {
           max-height: 37px;
         }
       }
-
+      .language-picker { 
+        @media (min-width: 40em) {
+          margin-left: 200px;
+        }
+        @media (min-width: 30em) {
+          margin-bottom: 15px;
+        }
+        button {
+          background: url("../img/about/main/icon-material-language@2x.png") right center no-repeat; 
+          background-size: 20px 20px;
+          height: 24px;
+          border: none;
+        }
+        .dropdown-toggle::after {
+          content: none;
+        }
+        .dropdown-toggle::focus {
+          box-shadow: none;
+        }
+        .dropdown-item-checked::before {
+          position: absolute;
+          right: 20px;
+          content: '✓';
+          font-weight: 900;
+        }
+        @media (min-width: 40em) {
+        .dropdown-menu {
+          width: 150px;
+          margin-top: 24px;
+          border: none;
+        }
+      }
+        
+      }
+      
     }
     
   }
