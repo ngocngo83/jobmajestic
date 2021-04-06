@@ -30,34 +30,31 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ s.about_url() }}">About</a>
                     </li>
-            
                 </ul>
 
     
 
                 <span class="ml-md-auto"></span>
 
-                <div class="btn-group btn-group-toggle btn-group-sm mr-3 my-3" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="option1" checked> EN
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option2"> 华
-                    </label>
+
+                <div class="dropdown language-picker">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item dropdown-item-checked" href="#">English</a></li>
+                    <li><a class="dropdown-item" href="#">Chinese</a></li>
+                  </ul>
                 </div>
-                <select class="selectpicker" data-width="fit">
-                    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
-                    <option  data-content='<span class="flag-icon flag-icon-my"></span> 华'>华</option>
-                </select>
-                            
+                
+                             
 
                 {% if is_guest %}
                 <span class="navbar-text">
-                        <a href="{{ s.post_job_url() }}" class="btn btn-post-job mr-3 px-5">Post a job</a>
-                        <i class="fas fa-user"></i> <a href="{{ user.login_url() }}" rel="nofollow" data-toggle="modal"
-                                                       data-target="#loginModal">Login</a>
-                        <a href="{{ user.signup_url() }}" rel="nofollow" data-toggle="modal" data-target="#signupModal">Sign Up</a>
-                    </span>
+                    <a href="{{ s.post_job_url() }}" class="btn btn-post-job mr-3 px-5">Post a job</a>
+                    <i class="fas fa-user"></i> <a href="{{ user.login_url() }}" rel="nofollow" data-toggle="modal"
+                                                   data-target="#loginModal">Login</a>
+                    <a href="{{ user.signup_url() }}" rel="nofollow" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                </span>
                 {% else %}
                 <div class="btn-group my-2">
                     <img src="{{ f.default_avatar(35) }}" class="rounded" alt="...">
