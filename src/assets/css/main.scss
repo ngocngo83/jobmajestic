@@ -79,7 +79,7 @@ body {
   .sitemap h6 {
     color: $sitemapHeaderColor;
     /*text-transform: capitalize;*/
-    font-family: 'made-tommy-regular';
+    font-family: 'made-tommy-regular, serif';
     font-size: 14px;
   }
 
@@ -89,7 +89,7 @@ body {
   }
   .sitemap .footer-text {
       color: $sitemapFooterText;
-      font-family: 'made-tommy-regular';
+      font-family: 'made-tommy-regular, serif';
       font-size: 14px;
   }
   .sitemap hr {
@@ -99,13 +99,13 @@ body {
   }
   .footer hr {
     opacity: 1;
-    margin-top: 50px;
+    //margin-top: 50px;
   }
   .footer .term-policy a {
     text-decoration: none;
   }
   .sitemap .leftside-text {
-      font-family: 'made-tommy-regular';
+      font-family: 'made-tommy-regular, serif';
       font-size: 12px;
   }
   code {
@@ -157,7 +157,7 @@ body {
 
   .job-description  {
      .ui-ux-designer {
-         font-family: 'made-tommy-regular';
+         font-family: 'made-tommy-regular, serif';
          font-size: 2.5em;
      }
      .petronas-icon {
@@ -168,11 +168,24 @@ body {
          width: 15px;
          height: auto;
      }
+     .btn-full-time {
+         width: 100%;
+         background-color: #007bff;
+         border-color: #007bff;
+         color: #fff;
+     }
+     .group-btn button {
+         width: 24.7%;
+     }
+     .require-scope {
+        background-color: #fff;
+        padding: 50px;
+     }
   }
-  @font-face {
-    font-family: 'made-tommy-regular';
-    src: url('../fonts/MADE TOMMY Regular.otf') format('otf');
-    font-style: normal;
+    @font-face {
+        font-family: 'made-tommy-regular';
+        src: url('./fonts/MADE TOMMY Regular.otf') format('otf');
+        font-style: normal;
     }
     @font-face {
         font-family: 'made-tommy-medium';
