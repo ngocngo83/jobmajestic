@@ -176,10 +176,18 @@ body {
      }
      .group-btn button {
          width: 24.7%;
+         text-transform: uppercase;
+     }
+     .group-btn button span {
+         padding-left: 5px;
      }
      .require-scope {
         background-color: #fff;
         padding: 50px;
+        .sub-title {
+            font-weight: 600;
+            font-size: 20px;
+        }
      }
   }
     @font-face {
