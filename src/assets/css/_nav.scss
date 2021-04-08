@@ -6,8 +6,22 @@ header {
     
     background-color: $navBgColor;
     
-    @media (min-width: 40em) {
+    @media only screen and (max-width: 600px) {
+      .main-logo {
+        margin-left: 10px;
+        img {
+          width: 124px;
+          margin-top: 2px;
+        }
+      }
+    }
+    @media only screen and (min-width: 600px) {
        height: 73px;
+       .main-logo {
+        img {
+          width: 182px;
+        }
+      }
     }
     .container-fluid {
       max-width: 1215px;
@@ -90,8 +104,7 @@ header {
                     content: none;
                   }                 
                     .dropdown-menu {
-                        width: 352px;
-                        margin-top: 11px;
+                      
                         border: none;
                         border-radius: 0;
                         padding: 2px;
@@ -243,32 +256,39 @@ header {
         color: $bigBtnFontColor;
       }
 
-      @media (min-width: 30em) {
-        .main-logo img {
-          max-width: 124px;
-          max-height: 25px;
-        }
+      @media only screen and (max-width: 600px) {
         .my-2 {
           float: left;
         }
-        .dropdown-menu {
-          width: 300px;
-          left: 0px;
+        .message-dropdown {
+          .dropdown-menu {
+            width: 300px;
+            left: 0px;
+            margin-top: 16px;
+          }
+        }
+        .user-dropdown {
+          .dropdown-menu {
+            border-radius: 0px;
+            margin-top: 15px;
+            img{
+              margin-right: 10px;
+            }
+          }
         }
       }
 
-      @media (min-width: 40em) {
-        .main-logo img {
-          max-width: 182px;
-          max-height: 37px;
-        }
+      @media only screen and (min-width: 600px) {
         .my-2 {
           float: right;
           margin-right: 25px;
         }
-        .dropdown-menu {
-           width: 352px;
-           left: -130px;
+        .message-dropdown {
+          .dropdown-menu {
+             margin-top: 11px;
+             width: 352px;
+             left: -130px;
+          }
         }
       }
       
