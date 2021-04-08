@@ -1,6 +1,6 @@
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
-{% set is_guest = true %}
+{% set is_guest = false %}
 {% set alert = true %}
 <!doctype html>
 <html lang="en" class="h-100">
@@ -47,25 +47,25 @@
 
 <footer>
     {% block sitemap %}
-    {% include 'layouts/_newsletter-form.html' %}
+    {# include 'layouts/_newsletter-form.html' #}
     <div class="sitemap py-3 py-md-4">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-sm col-md-7 col-lg-9">
+                <div class="col-sm col-md-12 col-lg-12">
                     <p>
                     <h6>Job Locations</h6>
-                    {% for i in range(1,20) %}
-                    {% if i > 1 %} - {% endif %}<a href="#">{{ 'location' | title }} {{ i }}</a>
+                    {% for i in range(1,10) %}
+                    {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs in Kuala Lumpur' | title }} </a>
                     {% endfor %}
                     </p>
                     <p class="mt-4">
-                    <h6>Job Categories</h6>
-                    {% for i in range(1,20) %}
-                    {% if i > 1 %} - {% endif %}<a href="#">{{ 'category' | title }} {{ i }}</a>
+                    <h6>Job by Skills</h6>
+                    {% for i in range(1,16) %}
+                    {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs Name' | title }} </a>
                     {% endfor %}
                     </p>
                 </div>
-                <div class="col-sm col-md-5 col-lg-3">
+                <!-- <div class="col-sm col-md-5 col-lg-3">
                     <p>
                     <h6>{{s.get_touch()}}</h6>
                     {#
@@ -95,12 +95,12 @@
                         <a href="{{ s.whatsapp_url() }}"
                            target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     {% endblock %}
-    <div class="footer py-3">
+    <!-- <div class="footer py-3">
         <div class="container">
             <div class="row">
                 <div class="col-md d-flex justify-content-center justify-content-md-end mb-3">
@@ -113,7 +113,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </footer>
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"

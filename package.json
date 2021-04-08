@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.0-beta3",
+    "bootstrap-icons": "^1.4.1",
     "browserslist": "^4.14.6",
     "caniuse-lite": "^1.0.30001156",
     "config": "^3.3.2",

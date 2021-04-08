@@ -10,7 +10,7 @@ header {
        height: 73px;
     }
     .container-fluid {
-      max-width: 1320px;
+      max-width: 1215px;
       width: 100%;
       padding-right: var(--bs-gutter-x,.75rem);
       padding-left: var(--bs-gutter-x,.75rem);
@@ -26,36 +26,206 @@ header {
       }
       #navbarSupportedContent{
         margin-left: 20px;
+        max-width: 966px;
         .navbar-nav{
-          margin-right: 60px;
+          width: 483px;
           li {
             margin-right: 7px;
           }
         }
-        .navbar-text{
-          @media (min-width: 40em) {
-            margin-left: 40px;
-          }
-          a {
-            margin-right: 40px;
-            color: $bigBtnBgColor;
-            text-decoration: none;
-          }
-          .btn-post-job {
-            background-color: $navBgColor;
-            border-color: $bigBtnBgColor;
-            border: 2px solid $bigBtnBgColor;
-            border-radius: 0;
-          }
-          .btn-post-job:hover{
-            color: $navBgColor;
-            background-color: $bigBtnBgColor;
-          }
+        .language-navbar{
+            width: 483px;
+            .navbar-info{
+              @media (min-width: 40em) {
+                width: 400px;
+                float: right;
+                margin-right: 30px;
+              }
+              .navbar-text a {
+                margin-left: 30px;
+                color: $bigBtnBgColor;
+                text-decoration: none;
+              }
+              .btn-post-job {
+                background-color: $navBgColor;
+                border-color: $bigBtnBgColor;
+                border: 2px solid $bigBtnBgColor;
+                border-radius: 0;
+              }
+              .btn-post-job:hover{
+                color: $navBgColor;
+                background-color: $bigBtnBgColor;
+              }
+              
+              .my-2 {          
+                .user-rounded {
+                  background-color: white;
+                  border-radius: 50%;
+                  padding: 4px;
+                  height: 35px;
+                  margin-right: 10px;
+                }
+                .message-dropdown {
+                  margin-right: 35px;
+                  button {
+                    background: url("../img/landingpage/message-nofi-icon.png") center no-repeat; 
+                    background-size: 27px 27px;
+                    border: none;
+                    height: 50px;
+                    width: 50px;
+                    span {
+                      position: absolute;
+                      top: 10px;
+                      right: 0px;
+                      padding: 5px 7px;
+                      border-radius: 50%;
+                      background-color: red;
+                      color: $dropdownMenuBgColor;
+                    }
+                  }
+                  button:active {
+                    border-style: outset;
+                  }
+                  .dropdown-toggle::after {
+                    content: none;
+                  }                 
+                    .dropdown-menu {
+                        width: 352px;
+                        margin-top: 11px;
+                        border: none;
+                        border-radius: 0;
+                        padding: 2px;
+                        padding-bottom: 15px;
+                        
+                       
+                        li{
+                          height: 70px;
+                          margin: auto;
+                          padding-top: 9px;
+                          a {
+                            color: $textColor;
+                            .messenger-name{
+                              font-size: 18px;
+                              font-weight: bold;
+                            }
+                            img {
+                              height: 50px;
+                              margin-right: 15px;
+                              float: left;
+                            }
+                            .dot{
+                                height: 7px;
+                                margin-top: -5px;
+                              span {
+                              height: 17px;
+                              width: 17px;
+                              background-color: red;
+                              border-radius: 50%;
+                              float: right;
+                            }
+
+                            }
+                            
+                          }
+                          
+                        }
+                      }
+                    
+                }
+                .user-dropdown{
+                  button{
+                    background-color: $bigBtnFontColor ;
+                    border: none;
+                  }
+                  .dropdown-toggle::after {
+                      content: none;
+                    }
+                    @media (min-width: 40em) {
+                    .dropdown-menu {
+                        width: 235px;
+                        margin-top: 11px;
+                        border: none;
+                        border-radius: 0;
+                        padding: 2px;
+                        left: -130px;
+                        li{
+                          border-bottom: solid 0.5px;
+                          border-color: $textColor;
+                          height: 53px;
+                          margin: auto;
+                          padding-top: 9px;
+                          img{
+                            height: 15px;
+                            margin-right: 15px;
+                          }
+                        }
+                        li:last-child {
+                          border-bottom: none;
+
+                        }
+                        a {
+                          color: $textColor;
+                        }
+                      }
+                    }
+                  }
+                  @media (min-width: 30em) {
+                    .dropdown-menu {
+                      li {
+                        a{
+                          img{
+                            margin-right: 15px;
+                          }
+                        }
+                      }
+                    }
+                  }
+              }
+              .navbar-toggler, .high-light {
+                color: $navHighlightFontColor;
+              }
+                
+            }
+            
+
+            .language-picker { 
+              float: left;
+              @media (min-width: 40em) {
+                width: 50px;
+              }
+              @media (min-width: 30em) {
+                margin-top: 7px;
+              }
+              button {
+                background: url("../img/about/main/icon-material-language@2x.png") right center no-repeat; 
+                background-size: 20px 20px;
+                height: 24px;
+                border: none;
+              }
+              .dropdown-toggle::after {
+                content: none;
+              }
+              .dropdown-toggle::focus {
+                box-shadow: none;
+              }
+              .dropdown-item-checked::before {
+                position: absolute;
+                right: 20px;
+                content: '✓';
+                font-weight: 900;
+              }
+              @media (min-width: 40em) {
+                .dropdown-menu {
+                  width: 150px;
+                  margin-top: 24px;
+                  border: none;
+                  border-radius: 0px;
+                }
+              }
         }
+        
       }
-      .navbar-toggler, .high-light {
-          color: $navHighlightFontColor;
-      }
+      
 
       
       
@@ -78,6 +248,13 @@ header {
           max-width: 124px;
           max-height: 25px;
         }
+        .my-2 {
+          float: left;
+        }
+        .dropdown-menu {
+          width: 300px;
+          left: 0px;
+        }
       }
 
       @media (min-width: 40em) {
@@ -85,39 +262,16 @@ header {
           max-width: 182px;
           max-height: 37px;
         }
-      }
-      .language-picker { 
-        @media (min-width: 40em) {
-          margin-left: 200px;
+        .my-2 {
+          float: right;
+          margin-right: 25px;
         }
-        @media (min-width: 30em) {
-          margin-bottom: 15px;
-        }
-        button {
-          background: url("../img/about/main/icon-material-language@2x.png") right center no-repeat; 
-          background-size: 20px 20px;
-          height: 24px;
-          border: none;
-        }
-        .dropdown-toggle::after {
-          content: none;
-        }
-        .dropdown-toggle::focus {
-          box-shadow: none;
-        }
-        .dropdown-item-checked::before {
-          position: absolute;
-          right: 20px;
-          content: '✓';
-          font-weight: 900;
-        }
-        @media (min-width: 40em) {
         .dropdown-menu {
-          width: 150px;
-          margin-top: 24px;
-          border: none;
+           width: 352px;
+           left: -130px;
         }
       }
+      
         
       }
       
