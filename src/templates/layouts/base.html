@@ -50,12 +50,12 @@
     {% block sitemap %}
     {% include 'layouts/_newsletter-form.html' %}
     <div class="sitemap py-3 py-md-4">
-        <div class="container">
+        <div class="container fluid">
             <div class="row">
-                <div class="col-sm col-md-2">
+                <div class="col-sm col-md-2 title">
                     <h6>Job by Locations</h6>
                 </div>
-                <div class="col-sm col-md-10">
+                <div class="col-sm col-md-10 list">
                     {% for i in range(1,20) %}
                         {% if i > 1 %} | {% endif %}<a href="#" class="footer-text">{{ 'location' | title }} {{ i }}</a>
                     {% endfor %}
