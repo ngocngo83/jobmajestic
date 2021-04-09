@@ -1,6 +1,6 @@
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
-{% set is_guest = true %}
+{% set is_guest = false %}
 {% set alert = true %}
 <!doctype html>
 <html lang="en" class="h-100">
@@ -48,9 +48,9 @@
 
 <footer>
     {% block sitemap %}
-    {% include 'layouts/_newsletter-form.html' %}
+    {# include 'layouts/_newsletter-form.html' #}
     <div class="sitemap py-3 py-md-4">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm col-md-2">
                     <h6>Job by Locations</h6>
@@ -131,31 +131,6 @@
         </div>
     </div>
     {% endblock %}
-    <div class="footer py-3">
-        <div class="container">
-            <hr class="color color-white">
-            <div class="row">
-                <div class="col-sm col-md-4 d-flex justify-content-start">Lorem ipsum dolor sit amet,</div>
-                <div class="col-sm col-md-4 d-flex justify-content-center">
-                    <p class="social-buttons">
-                        <a href="{{ s.facebook_url() }}"
-                           target="_blank"><i class="fa fa-facebook circle"></i></a>
-                        <a href="{{ s.instagram_url() }}"
-                           target="_blank"><i class="fa fa-instagram circle"></i></a>
-                        <a href="{{ s.linkedin_url() }}"
-                           target="_blank"><i class="fa fa-linkedin-square circle"></i></a>
-                        <a href="{{ s.tiktok_url() }}"
-                           target="_blank"><i class="fa fa-twitter circle"></i></a>
-                    </p>
-                </div>
-                <div class="col-sm col-md-4 d-flex justify-content-end term-policy">
-                    <a href="{{ s.privacy_url() }}" class="mr-3">Privacy Policy</a>&nbsp;&nbsp;
-                    <a href="{{ s.terms_url() }}" class="mr-3">Terms Of Service</a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
 </footer>
 <script
         src="https://code.jquery.com/jquery-3.5.1.min.js"
