@@ -32,6 +32,7 @@
     "nunjucks-tag-spaceless": "^1.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "bootstrap": "^5.0.0-beta3",
     "bootstrap-icons": "^1.4.1",
     "browserslist": "^4.14.6",

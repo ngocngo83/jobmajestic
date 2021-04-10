@@ -1,5 +1,7 @@
 {% import 'macros/path.html' as f %}
 
+{% import 'macros/site.html' as s %}
+
 {% extends "layouts/base.html" %}
 
 {% set newsletter_subscription = true %}
@@ -7,5 +9,78 @@
 {% block js %}{% endblock %}
 
 {% block content %}
-{% include 'components/_carousel-sliders.html' %}
+<div class="main">
+	<div class="sank-rectangle"></div>
+	<div class="container container-herobanner">
+		<div class="row herobanner">
+			<div class="herobanner-img-mobile">
+				<img src="assets/img/landingpage/Mask Group 21@2x.png">
+			</div>
+			<div class="col-lg-5 herobanner-title">
+				<h3>Lorem ipsum dolor sit amet, consectetur</h3>
+				<div class="search-box">
+					<div class="row">
+						<div class="input-container" id="search-by-title-skill">
+							<input type="text" class="form-control" placeholder="&#xF002;  Search by Job Title, Company or Skills" name="search-by-title-skill">
+						</div>
+                       	<div class="input-container" id="search-by-location">
+							<input type="text" class="form-control" placeholder="&#xF041;  Location" name="search-by-localtion">
+						</div>
+						<div class="input-container" id="search-by-category">
+							<input type="text" class="form-control" placeholder="&#xF0B1;  Job Categories" name="search-by-categories">
+						</div>
+						<div class="input-container" id="search-button">
+							<button class="btn btn-secondary">Search</button>
+						</div>
+						
+
+					</div>
+					<div class="row advanced-search">
+						<a href="{{ s.job_search_url() }}">Advanced Search</a>
+					</div>
+				</div>
+				<p>Or discover categories</p>
+				<div class="categories">
+					<button>Work From Home</button>
+					<button>Freelance</button>
+					<button>Contract</button>
+					<button>Full-time</button>
+					<button>Part-time</button>
+					<button>Jobs for COVID-19 Layoff</button>
+					<button>Jobs for Women</button>
+				</div>
+			</div>
+			<div class="col-lg-7 herobanner-img">
+				<img src="assets/img/landingpage/Mask Group 21@2x.png">
+			</div>
+		</div>
+		<div class="row trust-by-section">
+			<div class="container">
+				<div class="row trust-title">
+					<p>We are trusted by</p>
+				</div>
+				<div class="row trust-company-logo">
+					<img src="assets/img/companies/main/Image 620@2x.png">
+					<img src="assets/img/companies/main/Image 620@2x.png">
+					<img src="assets/img/companies/main/Image 620@2x.png">
+					<img src="assets/img/companies/main/Image 620@2x.png">
+					<img src="assets/img/companies/main/Image 620@2x.png">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="row announcement-section">
+		<div class="container container-warning">
+			<div class="warning-img-title">
+				<img src="assets/img/landingpage/Icon metro-warning@2x.png">
+				<h4>Announcement/alert section</h4>
+			</div>
+			<div class="warning-description">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempor diam eget consequat varius. Aenean eget lectus sit amet dolor facilisis tempus. Etiam commodo felis in odio gravida, a porta dolor congue. In in gravida lorem, eu elementum odio. Ut suscipit arcu tellus, in venenatis urna volutpat quis. Duis molestie congue maximus. Quisque gravida nulla sed cursus euismod. In placerat quis enim in scelerisque. In sed elementum orci. Proin scelerisque ut tortor auctor rutrum. Nunc fringilla orci ullamcorper lorem accumsan, quis suscipit mauris semper.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- {% include 'components/_carousel-sliders.html' %} -->
 {% endblock %}
