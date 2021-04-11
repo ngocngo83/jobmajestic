@@ -172,9 +172,42 @@ body {
   .border1 {
     top: 7017px;
     left: 349px;
-    width: 1229px;
+    width: 100%;//1229px;
     height: 0px;
     border: 1px solid #FFFFFF;
+  }
+  .bottom-section {
+    top: 7094px;
+    .footleft-text {
+      left: 352px;
+      width: 348px;
+      height: 30px;
+    }
+    .footer-about {
+      p:first-child {
+        top: 7094px;
+        left: 814px;
+        width: 35px;
+        height: 15px;
+      }
+      p {
+        left: 814px;
+        width: 78px;//71?
+        height: 14px;
+      }
+      p:nth-child(1) {
+        top: 7133px;
+      }
+      p:nth-child(2) {
+        top: 7159px;
+      }
+      p:nth-child(3) {
+        top: 7185px;
+      }
+      p:nth-child(4) {
+        top: 7211px;
+      }
+    }
   }
 }
 
