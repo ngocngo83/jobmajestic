@@ -50,21 +50,22 @@
     {# include 'layouts/_newsletter-form.html' #}
     <div class="sitemap py-3 py-md-4">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm col-md-12 col-lg-12">
-                    <p>
-                    <h6>Job Locations</h6>
-                    {% for i in range(1,10) %}
-                    {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs in Kuala Lumpur' | title }} </a>
-                    {% endfor %}
-                    </p>
-                    <p class="mt-4">
+            <div class="row  job-location mb-3">
+                <p>
+                <div class="col-sm-6 col-md-3 col-lg-3 title mb-3">
+                    <h6>Jobs by Location</h6>
+                    <!-- <p class="mt-4">
                     <h6>Job by Skills</h6>
                     {% for i in range(1,16) %}
                     {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs Name' | title }} </a>
                     {% endfor %}
-                    </p>
+                    </p> -->
                 </div>
+                <div class="col-sm-6 col-md-9 col-lg-9 mr-3 list">
+                    {% for i in range(1,10) %}
+                        {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs in Kuala Lumpur' | title }} </a>
+                    {% endfor %}
+                </div></p>
                 <!-- <div class="col-sm col-md-5 col-lg-3">
                     <p>
                     <h6>{{s.get_touch()}}</h6>
@@ -96,6 +97,33 @@
                            target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </p>
                 </div> -->
+            </div>
+            <div class="row job-skills mt-3">
+                <p>
+                    <div class="col-sm-6 col-md-3 col-lg-3 title mb-3">
+                        <h6>Jobs by Skill</h6>
+                    </div>
+                    <div class="col-sm-6 col-md-9 col-lg-9 mr-3 list mb-3">
+                        {% for i in range(1,16) %}
+                            {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs Name' | title }} </a>
+                        {% endfor %}
+                    </div>
+                </p>
+            </div>
+            <div class="row international-jobs mt-3">
+                <p>
+                    <div class="col-sm-6 col-md-3 col-lg-3 title mb-3">
+                        <h6>International Jobs</h6>
+                    </div>
+                    <div class="col-sm-6 col-md-9 col-lg-9 mr-3 list mb-3">
+                        {% for i in range(1,16) %}
+                            {% if i > 1 %} | {% endif %}<a href="#">{{ 'Jobs Name' | title }} </a>
+                        {% endfor %}
+                    </div>
+                </p>
+            </div>
+            <div class="row border1 mt-3">
+
             </div>
         </div>
     </div>

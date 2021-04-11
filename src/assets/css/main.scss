@@ -64,7 +64,7 @@ body {
 
   .sitemap h6 {
     color: $sitemapHeaderColor;
-    text-transform: capitalize;
+    //text-transform: capitalize;
   }
 
   .sitemap a {
@@ -113,6 +113,68 @@ body {
   }
   footer {
       margin-top: auto;
+  }
+  .job-location {
+    top: 6722px;
+    .title {
+      left: 352px;
+      width: 110px;
+      height: 18px;
+    }
+    .list {
+      left: 560px;
+      width: 956px;
+      height: 44px;
+    }
+    h6 {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+  .job-skills {
+    top: 6806px;
+    .title {
+      left: 352px;
+      //width: 79px;
+      width:105px;
+      height: 18px;
+    }
+    .list {
+      left: 560px;
+      width: 917px;
+      height: 44px;
+    }
+    h6 {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+  .international-jobs {
+    top: 6890px;
+    .title {
+      left: 352px;
+      width: 105px;
+      height: 18px;
+    }
+    .list {
+      left: 560px;
+      width: 917px;
+      height: 44px;
+    }
+    h6 {
+      color: #fff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+  .border1 {
+    top: 7017px;
+    left: 349px;
+    width: 1229px;
+    height: 0px;
+    border: 1px solid #FFFFFF;
   }
 }
 
